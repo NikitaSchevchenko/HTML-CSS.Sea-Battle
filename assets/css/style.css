@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --cell-size: 60px;
+}
+
+.game {
+  display: grid;
+  height: 660px;
+  width: 660px;
+  grid-template-rows: repeat(11, var(--cell-size));
+  grid-template-columns: repeat(11, var(--cell-size));
+  background: linear-gradient(to left, black 1px, transparent 1px),
+    linear-gradient(to top, black 1px, transparent 1px);
+  background-size: var(--cell-size) var(--cell-size);
+  box-shadow: 1px 2px 2px black;
+}
+
+.topleft {
+  outline: 1px solid black;
+  grid-area: 1 1;
+  background-color: black;
+}
+
+.number {
+  counter-increment: number;
+}
+
+.numbers {
+  display: grid;
+  grid-column: 1;
+  grid-row: 2 / span 10;
+  grid-template-rows: repeat(10, var(--cell-size));
+  grid-template-columns: 1 var(--cell-size);
+  outline: 1px solid black;
+}
+
+.letters {
+  display: grid;
+  grid-column: 2 / span 10;
+  grid-row: 1;
+  grid-template-rows: 1 var(--cell-size);
+  grid-template-columns: repeat(10, var(--cell-size));
+  outline: 1px solid black;
+}
+
+.board {
+  display: grid;
+  grid-column: 2 / span 10;
+  grid-row: 2 / span 10;
+  grid-template-rows: repeat(10, var(--cell-size));
+  grid-template-columns: repeat(10, var(--cell-size));
+  outline: 1px solid black;
+}
+
+.number::before {
+  content: counter(number);
+}
+
+.letter,
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.letter {
+  padding-top: 6px;
+}
+.ship{
+  border: 2.5px solid black;
+  margin: 3px;
+}
+
+.ship.purple {
+  background-color: purple;
+}
+
+.ship.green {
+  background-color: rgb(22, 219, 22);
+}
+
+.ship.blue {
+  background-color: blue;
+}
+
+.ship.red {
+  background-color: red;
+}
+
+.ship.purple.s1 {
+  grid-row: 1;
+  grid-column: span 2;
+}
+
+.ship.purple.s2 {
+  grid-row: 8;
+  grid-column: span 2;
+}
+
+.ship.purple.s3 {
+  grid-row: 6 / span 2;
+  grid-column: 6;
+}
+
+.ship.purple.s4 {
+  grid-row: 3 / span 2;
+  grid-column: 10;
+}
+
+.ship.green.s1 {
+  grid-row: span 3;
+  grid-column: 4;
+}
+
+.ship.green.s2{
+  grid-row: 3;
+  grid-column: 6/span 3;
+}
+
+.ship.green.s3{
+  grid-row: 6/span 3;
+  grid-column:10;
+}
+
+.ship.blue.s1{
+  grid-row: 1;
+  grid-column: 7/span 4;
+}
+
+.ship.blue.s2{
+  grid-row: 3/span 4;
+  grid-column: 1;
+}
+
+.ship.red.s1{
+  grid-row: 10;
+  grid-column: 5/span 6;
+}
+
