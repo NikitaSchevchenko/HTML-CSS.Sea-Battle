@@ -61,9 +61,8 @@
 
 .letter,
 .number {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items:center;
   font-size: 28px;
   font-weight: bold;
 }
